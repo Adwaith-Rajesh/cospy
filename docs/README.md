@@ -20,7 +20,7 @@ Options:
   --help                Show this message and exit.   
 ```
 
-Some values like <b>author name</b> and <b>Author Email</b> which are used some times used the setup files and in some LICENSE file can be set in the [config.py](/../cos.config.py) file
+Some values like <b>author name</b> and <b>Author Email</b> which are used some times used the setup files and in some LICENSE file can be set in the [config.py](https://github.com/Adwaith-Rajesh/code-starter/blob/master/cos/config.py) file
 
 Currently supported languages are.
   * Python
