@@ -1,0 +1,16 @@
+{
+    "create-files": [
+        "requirements.txt",
+        "setup.py",
+        "README.md",
+        ".gitignore",
+        "LICENSE",
+        "project-name/__init__.py"
+    ],
+    "contents": {
+        "setup.py": "from setuptools import setup, find_packages\n\n\ndef read_requirements():\n    with open('requirements.txt', 'r') as req:\n        content = req.read()\n        requirements = content.split('n')\n\n    return requirements\n\n\nsetup(\n    name='##project--name##',\n    version='0.0.0',\n    author='##author--name##',\n    author_email='##author--email##',\n    packages=find_packages(),\n    include_package_date=True,\n    install_requires=read_requirements()\n)\n"
+    },
+    "create-src-folders": {
+        "project-name": {}
+    }
+}
