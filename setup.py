@@ -15,12 +15,12 @@ def read_requirements():
 
 
 setup(
-    name="code-starter",
+    name="cospy",
     version="0.2.0",
     description="A CLI tool to get you started with programming projects.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Adwaith-Rajesh/code-starter",
+    url="https://github.com/Adwaith-Rajesh/cospy",
     author="Adwaith-Rajesh",
     author_email="adwaithrajesh3180@gmail.com",
     classifiers=[
