@@ -15,7 +15,7 @@ def read_requirements():
 
 
 setup(
-    name="code-starter",
+    name="cospy",
     version="0.2.0",
     description="A CLI tool to get you started with programming projects.",
     long_description=long_description,
