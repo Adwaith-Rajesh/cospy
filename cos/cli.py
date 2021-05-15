@@ -20,7 +20,6 @@ class Commands(click.MultiCommand):
                     "cmd_", "").replace(".py", ""))
 
         commands.sort()
-        print(f"{commands=}")
         return commands
 
     def get_command(self, ctx: Context, cmd_name: str) -> Optional[Command]:

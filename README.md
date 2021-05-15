@@ -1,14 +1,14 @@
 # Code Starter
 ___
 
-A Simple CLI tool to get you started with any programming project.
+A Simple CLI tool do a lot of things.
 <br>
 <br>
 
 ## Installation
 ___
 ```bash
-pip install code-starter
+pip install cospy
 ```
 ## API
 ___
