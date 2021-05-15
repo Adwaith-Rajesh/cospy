@@ -14,4 +14,5 @@ pip install cospy
 ___
 Below is the list of currently supported API.
 
-* [`cos init`](docs/README.md#init)
+* [`cos init`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#init)
+* [`cos clean`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#clean)

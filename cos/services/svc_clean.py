@@ -61,7 +61,6 @@ class Clean:
         Path(directory_name).mkdir(exist_ok=True, parents=True)
 
     def move_file(self, initial: str, final: str) -> None:
-        print(f"{initial=} {final=}")
         shutil.move(initial, final)
 
     @staticmethod

@@ -5,7 +5,7 @@ The `init` command in simple terms is "`npm init`" but for all languages. It all
 Currently supported options are listed below.
 
 ```commandline
-Usage: cos cli [OPTIONS]
+Usage: cos init [OPTIONS]
 
   Start a new project in any language
 
@@ -45,4 +45,29 @@ ___example___
  * Create a python project named ade and create a new venv(assuming you have virtualenv installed)
  ```bash
  cos init -l python -n ade --env  # since --no-git is not passed this will also initialize a git repo.
+ ```
+
+
+ ## Clean
+ The `clean` command is used to sort files in a directory based on their MIME type or extension.
+
+ Currently supported options are listed below
+
+ ```commandline
+ Usage: cos clean [OPTIONS]
+
+  Clean / Sort directory
+
+Options:
+  -d, --directory TEXT          The directory to clean  [default: .]
+  -ct, --clean-type [ext|type]  ext: Group files by extension       
+                                type: Group files by type  [default: ext]
+  --help                        Show this message and exit.
+ ```
+
+ ___example___
+
+ * Clean the current directory based on extensions
+ ```commandline
+ cos clean -ct ext  # by default -d is "."
  ```
