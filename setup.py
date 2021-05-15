@@ -40,7 +40,7 @@ setup(
     python_requires=">3.6",
     install_requires=read_requirements(),
     include_package_data=True,
-    package_data={"cos": ["meta/init/template/*.json"]},
+    package_data={"cos": ["meta/init/templates/*.json"]},
     entry_points={
         "console_scripts": [
             "cos=cos.cli:cli"
