@@ -11,6 +11,9 @@ from rich.console import Console
 from rich.table import Table
 import click
 
+from cos.utils import create_folder
+from cos.utils import create_json_file
+
 # types
 TASK_DATA_TYPE = Dict[str, Dict[str, Union[List[str], Dict[str, str]]]]
 
@@ -19,13 +22,11 @@ TASKS_META = os.path.join(
     Path(os.path.dirname(__file__)).parent, "meta", "tasks")
 
 # make the directory is it does not exists
-Path(TASKS_META).mkdir(exist_ok=True, parents=True)
+create_folder(TASKS_META)
 
 # make the tasks.json file if ot does not exists
 json_file = os.path.join(TASKS_META, "tasks.json")
-if not Path(json_file).is_file():
-    with open(json_file, "w") as f:
-        json.dump({}, f, indent=4)
+create_json_file(json_file)
 
 
 def get_tasks_data() -> TASK_DATA_TYPE:
