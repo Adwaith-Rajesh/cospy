@@ -7,6 +7,8 @@ from typing import Dict
 from typing import List
 from typing import Union
 
+from rich.console import Console
+from rich.table import Table
 import click
 
 # types
@@ -46,7 +48,7 @@ def create_new_group(group_name: str) -> None:
     if not check_grp_exists(group_name):
         data = get_tasks_data()
         try:
-            data[group_name] = {"data": {}, "done": []}
+            data[group_name] = {"tasks": {}, "done": []}
             update_tasks_data(data)
             click.echo(click.style(
                 f"Group {group_name!r} created successfully.", fg="green"))
@@ -71,6 +73,54 @@ def delete_group(group_name: str) -> None:
             f"Group {group_name!r} does not exists.", fg="yellow"))
 
 
+def print_all_grp_names():
+    table = Table(title="Groups")
+    table.add_column("Groups", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Tasks", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Done", justify="center", style="cyan", no_wrap=True)
+
+    data = get_tasks_data()
+
+    if data:
+
+        for g in data.keys():
+            table.add_row(g, str(len(data[g]["tasks"])), str(
+                len(data[g]["done"])))
+
+        console = Console()
+        console.print(table)
+
+    else:
+        click.echo(click.style(
+            "No groups exists. \nUse 'cos tasks new <group-name>' to make a new group of tasks.", fg="yellow"))
+
+
+def print_all_tasks(group_name: str):
+
+    if check_grp_exists(group_name):
+        table = Table(title=group_name)
+        table.add_column("ID", justify="center", style="cyan", no_wrap=True)
+        table.add_column("Task", justify="center", style="cyan", no_wrap=False)
+        table.add_column("Done", justify="center", style="cyan", no_wrap=True)
+
+        data = get_tasks_data().get(group_name)
+        tasks = data["tasks"]
+
+        def did_task(_id: str) -> str:
+            return "✔" if _id in data["done"] else "✘"
+
+        if tasks:
+            for _id, task in tasks.items():
+                table.add_row(_id, task, did_task(_id))
+
+            console = Console()
+            console.print(table)
+
+        else:
+            click.echo(click.style(
+                f"No Tasks exists. \nUse 'cos tasks -g {group_name} -a <task>' to make a new task."))
+
+
 class Tasks:
 
     """Edit tasks group"""
@@ -78,20 +128,20 @@ class Tasks:
     def __init__(self, group_name: str) -> None:
         self.group = group_name
         self.data = get_tasks_data()
-        self.group_data = self.data.get(self.group).get("data")
+        self.group_data = self.data.get(self.group).get("tasks")
         self.done_data = self.data.get(self.group).get("done")
 
     def add(self, task: str) -> None:
         _id = self.gen_id()
-        self.data[self.group]["data"][_id] = task
+        self.data[self.group]["tasks"][_id] = task
         self.update()
         click.echo(click.style(f"Task added successfully! ", fg="green"))
         self.print_task_update_message(str(_id), task)
 
     def remove(self, _id: str):
         try:
-            task = self.data[self.group]["data"][_id]
-            del self.data[self.group]["data"][_id]
+            task = self.data[self.group]["tasks"][_id]
+            del self.data[self.group]["tasks"][_id]
             with suppress(ValueError):
                 self.data[self.group]["done"].remove(_id)
             self.update()
@@ -106,7 +156,7 @@ class Tasks:
             self.data[self.group]["done"].append(str(_id))
             self.update()
 
-            task = self.data[self.group]["data"][_id]
+            task = self.data[self.group]["tasks"][_id]
             self.print_task_update_message(_id, task)
             click.echo(click.style("Marked as Done", fg="green"))
 
