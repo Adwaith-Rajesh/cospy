@@ -23,7 +23,7 @@ Path(TASKS_META).mkdir(exist_ok=True, parents=True)
 
 # make the tasks.json file if ot does not exists
 json_file = os.path.join(TASKS_META, "tasks.json")
-if not Path(json_file).is_file:
+if not Path(json_file).is_file():
     with open(json_file, "w") as f:
         json.dump({}, f, indent=4)
 
