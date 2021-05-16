@@ -13,6 +13,7 @@ import click
 import requests
 
 from cos.config import AUTHOR_NAME, AUTHOR_EMAIL, GITHUB_USER
+from cos.utils import check_virtual_env_installed
 
 START_META = os.path.join(
     Path(os.path.dirname(__file__)).parent, "meta", "init")
@@ -66,12 +67,6 @@ def get_langs_and_licenses() -> Dict[str, List[str]]:
     lice = get_license_list()
 
     return {"langs": langs, "lice": lice}
-
-
-def check_virtual_env_installed() -> bool:
-    reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'])
-    installed_packages = [r.decode().split('==')[0] for r in reqs.split()]
-    return "virtualenv" in installed_packages
 
 
 class Init:
