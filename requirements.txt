@@ -4,7 +4,6 @@ chardet==4.0.0
 click==8.0.0
 colorama==0.4.4
 commonmark==0.9.1
-cospy==0.2.0
 docutils==0.17.1
 filetype==1.0.7
 idna==2.10
@@ -24,7 +23,6 @@ rich==10.2.0
 six==1.16.0
 toml==0.10.2
 tqdm==4.60.0
-twine==3.4.1
 urllib3==1.26.4
 webencodings==0.5.1
 zipp==3.4.1
