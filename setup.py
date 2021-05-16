@@ -16,8 +16,8 @@ def read_requirements():
 
 setup(
     name="cospy",
-    version="0.2.0",
-    description="A CLI tool to get you started with programming projects.",
+    version="0.3.0",
+    description="A simple CLI tool to do a lot of things..",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Adwaith-Rajesh/cospy",
