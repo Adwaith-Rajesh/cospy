@@ -37,7 +37,7 @@ ___example___
  cos init -l python -n ade --no-git
  ```
 
- * Create a python project named ade in directory names `test`
+ * Create a python project named ade in directory named `test`
  ```commandline
  cos init -l python -n ade -d test
  ```
@@ -71,3 +71,74 @@ Options:
  ```commandline
  cos clean -ct ext  # by default -d is "."
  ```
+
+ ## Tasks
+ An easier way to manage tasks without leaving your terminal
+
+ Currently supported options are listed below
+
+ ```commandline
+ Usage: cos tasks [OPTIONS] COMMAND [ARGS]...
+
+  Manage programming tasks more easily
+
+Options:
+  -g, --group TEXT   The group to make changes to.
+  -a, --add TEXT     add a new task.
+  -r, --remove TEXT  remove a task.
+  -d, --done TEXT    mark task as done.
+  --help             Show this message and exit.
+
+Commands:
+  delete  Delete a task group
+  ls      List all the groups or task in a group cos tasks ls...
+  new     Create new task group
+
+ ```
+
+ ___examples___
+
+* Create a new task group.
+  <br>
+  <br>
+  A task group as the name suggest is a way to group your task into different categories. Each task group can be named after the project that you are working on or anything else.
+  <br>
+  A task group can be made using the following command.
+  ```bash
+  cos tasks new <group-name>
+  ```
+
+* Delete a task group.
+  ```bash
+  cos tasks delete <group-name>
+  ```
+
+* List all the task group or all tasks in a group
+  * To list all the groups.
+    ```bash
+    cos tasks ls
+    ```
+  * To list all the tasks in a group.
+    ```bash
+    cos tasks ls <group-name>
+    ```
+* Adding, Removing, Marking tasks.
+<br>
+<br>
+In each group a task can be added, removed or marked as Done.
+
+  * Add a new task to the group.
+    <br>
+    When a new task is made an id will be generated to the task, which will be printed to the console.
+    ```bash
+    cos tasks -g <group-name> -a <task-description>
+    ```
+
+  * Remove a task from the group.
+    ```bash
+    cos tasks -g <group-name> -r <task-id>
+    ```
+  * Mark task as done.
+    ```bash
+    cos tasks -g <group-name> -d <task-id>
+    ```
