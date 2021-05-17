@@ -23,11 +23,10 @@ def cli() -> None:
 
 @cli.command()
 @click.argument("venv_name", type=str)
-@click.option("-d", "--directory", type=str, default=COS_VENV_DIR, help="The directory to make the venv.")
 @click.option("-p", "--python", type=str, default=".", help="Specify a python version.")
-def new(venv_name: str, python: str, directory: str) -> None:
+def new(venv_name: str, python: str) -> None:
     """Create a new virtualenv"""
-    rc = create_new_venv(venv_name, directory, python)
+    rc = create_new_venv(venv_name, COS_VENV_DIR, python)
     if rc == 0:
         click.echo(click.style("Virtualenv created successfully",
                                fg="green"), file=sys.stdout)

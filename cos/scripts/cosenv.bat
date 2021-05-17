@@ -6,7 +6,7 @@ rem and modified to the cos CLI needs
 
 
 if not defined COS_VENV_DIR (
-    set "COS_VENV_DIR=%USERPROFILE%\python_virtual_envs"
+    set "COS_VENV_DIR=%USERPROFILE%\cos_venvs"
 )
 
 if not defined VIRTUALENVWRAPPER_PROJECT_FILENAME (
