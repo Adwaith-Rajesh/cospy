@@ -27,20 +27,16 @@ def cli() -> None:
 @click.option("-p", "--python", type=str, default=".", help="Specify a python version.")
 def new(venv_name: str, python: str, directory: str) -> None:
     """Create a new virtualenv"""
+    rc = create_new_venv(venv_name, directory, python)
+    if rc == 0:
+        click.echo(click.style("Virtualenv created successfully",
+                               fg="green"), file=sys.stdout)
+        sys.exit(0)
 
-    if not check_venv_exists(venv_name):
-        rc = create_new_venv(venv_name, directory, python)
-        if rc == 0:
-            click.echo(click.style("Virtualenv created successfully",
-                       fg="green"), file=sys.stdout)
-            sys.exit(0)
-
-        else:
-            click.echo(click.style("Some error occurred",
-                       fg="red"), file=sys.stderr)
-            sys.exit(1)
     else:
-        venv_does_not_exist_msg(venv_name)
+        click.echo(click.style("Some error occurred",
+                               fg="red"), file=sys.stderr)
+        sys.exit(1)
 
 
 @cli.command()
