@@ -142,3 +142,56 @@ In each group a task can be added, removed or marked as Done.
     ```bash
     cos tasks -g <group-name> -d <task-id>
     ```
+
+## Venv
+
+### For windows only
+<br>
+
+Venv is a simple and easy python virtual env manager.
+
+Currently supported options are listed below.
+```commandline
+Usage: cos cli [OPTIONS] COMMAND [ARGS]...
+
+  Manage all your Python venv in a single place.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  ls   List all the venv created by 'cos venv'
+  new  Create a new virtualenv
+  rm   Remove a virtual env
+```
+
+___examples___
+
+* Create a new venv.
+
+  By default the venv are created in the directory specified in the `COS_VENV_DIR` path variable. If not it will be saved in `%USERPROFILE%\cos_venvs"`. To create a new venv run the following command.
+
+  ```bash
+  cos venv new <venv-name>
+  ```
+
+* Remove a venv
+
+  Remove a venv made by `cospy`
+   ```bash
+   cos venv rm <venv-name>
+  ```
+
+* List all the venv.
+
+  To list all the venv created by `cospy`. Run the following command.
+  ```bash
+  cos venv ls
+  ```
+* Activate venv
+
+  To activate a venv created by `cospy`. Run the following command.
+
+  ```bash
+  cosenv <venv-name>
+  ```
