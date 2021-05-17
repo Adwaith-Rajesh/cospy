@@ -14,6 +14,9 @@ def read_requirements():
     return requirements
 
 
+scripts = ["cos/scripts/cosenv.bat"]
+
+
 setup(
     name="cospy",
     version="0.3.0",
@@ -23,6 +26,7 @@ setup(
     url="https://github.com/Adwaith-Rajesh/cospy",
     author="Adwaith-Rajesh",
     author_email="adwaithrajesh3180@gmail.com",
+    scripts=scripts,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
