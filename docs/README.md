@@ -140,7 +140,7 @@ In each group a task can be added, removed or marked as Done.
     ```
   * Mark task as done.
     ```bash
-    cos venv -g <group-name> -d <task-id>
+    cos tasks -g <group-name> -d <task-id>
     ```
 
 ## Venv

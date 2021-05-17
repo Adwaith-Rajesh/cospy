@@ -24,7 +24,7 @@ Below is the list of currently supported API.
 * [`cos init`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#init)  - Start a programming project in any language.
 * [`cos clean`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#clean) - Sort directory.
 * [`cos tasks`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#tasks) - Manage tasks
-* [`cos tasks`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#venv) - Manage virtual environments
+* [`cos venv`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#venv) - Manage virtual environments
 
 ## Usage
 All the docs and usage are listed [here](https://github.com/Adwaith-Rajesh/cospy/tree/master/docs).
