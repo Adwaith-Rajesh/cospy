@@ -1,10 +1,63 @@
+import sys
+import platform
+
 import click
 
+from cos.config import COS_VENV_DIR
+from cos.services.svc_venv import check_venv_exists
+from cos.services.svc_venv import create_new_venv
+from cos.services.svc_venv import list_venvs
+from cos.services.svc_venv import remove_venv
+from cos.services.svc_venv import venv_does_not_exist_msg
 
-@click.command()
-@click.option("-n", "--new", is_flag=True, default=False, help="Create a new venv with the given name")
-@click.option("-d", "--delete", is_flag=True, default=False, help="Delete the venv with the given name")
-@click.option("-")
-def cli(new: bool, delete: bool):
-    """Manage all your Python venv in a single place"""
-    print(f"{new=} {delete=}")
+
+@click.group(invoke_without_command=True)
+def cli() -> None:
+    """Manage all your Python venv in a single place.
+    """
+    if platform.system() != "Windows":
+        click.echo(click.style(
+            "Oops! This command will only work on Windows.", fg="yellow"), file=sys.stdout)
+        sys.exit(1)
+
+
+@cli.command()
+@click.argument("venv_name", type=str)
+@click.option("-d", "--directory", type=str, default=COS_VENV_DIR, help="The directory to make the venv.")
+@click.option("-p", "--python", type=str, default=".", help="Specify a python version.")
+def new(venv_name: str, python: str, directory: str) -> None:
+    """Create a new virtualenv"""
+
+    if not check_venv_exists(venv_name):
+        rc = create_new_venv(venv_name, directory, python)
+        if rc == 0:
+            click.echo(click.style("Virtualenv created successfully",
+                       fg="green"), file=sys.stdout)
+            sys.exit(0)
+
+        else:
+            click.echo(click.style("Some error occurred",
+                       fg="red"), file=sys.stderr)
+            sys.exit(1)
+    else:
+        venv_does_not_exist_msg(venv_name)
+
+
+@cli.command()
+@click.argument("venv_name", type=str, )
+def rm(venv_name: str) -> None:
+    """Remove a virtual env"""
+    if check_venv_exists(venv_name):
+        remove_venv(venv_name)
+        click.echo(click.style(f"Virtualenv {venv_name!r} removed successfully",
+                               fg="green"), file=sys.stdout)
+        sys.exit(0)
+
+    else:
+        venv_does_not_exist_msg(venv_name)
+
+
+@cli.command()
+def ls():
+    """List all the venv created by 'cos venv'"""
+    list_venvs()
