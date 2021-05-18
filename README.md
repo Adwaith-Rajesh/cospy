@@ -1,5 +1,7 @@
 # Cospy
 A Simple CLI tool do a lot of things.
+
+[![Pypi-Upload](https://github.com/Adwaith-Rajesh/cospy/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Adwaith-Rajesh/cospy/actions/workflows/python-publish.yml)
 ___
 ## Table of contents
   - [Description](#DESCRIPTION)
