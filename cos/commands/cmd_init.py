@@ -1,10 +1,12 @@
-from pathlib import Path
 import os
+from pathlib import Path
 
 import click
 
-from cos.services.svc_init import Init, get_langs_and_licenses
-from cos.config import AUTHOR_EMAIL, AUTHOR_NAME
+from cos.config import AUTHOR_EMAIL
+from cos.config import AUTHOR_NAME
+from cos.services.svc_init import get_langs_and_licenses
+from cos.services.svc_init import Init
 
 
 @click.command()

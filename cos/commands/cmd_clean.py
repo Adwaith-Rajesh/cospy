@@ -1,5 +1,5 @@
-from click.types import Choice
 import click
+from click.types import Choice
 
 from cos.services.svc_clean import Clean
 

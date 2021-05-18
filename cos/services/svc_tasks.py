@@ -1,15 +1,14 @@
-from pathlib import Path
-from contextlib import suppress
-import os
 import json
-
+import os
+from contextlib import suppress
+from pathlib import Path
 from typing import Dict
 from typing import List
 from typing import Union
 
+import click
 from rich.console import Console
 from rich.table import Table
-import click
 
 from cos.utils import create_folder
 from cos.utils import create_json_file

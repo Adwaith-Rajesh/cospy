@@ -1,11 +1,10 @@
+import mimetypes
 import os
 import shutil
-import mimetypes
 from pathlib import Path
-
-from typing import Literal
-from typing import List
 from typing import Dict
+from typing import List
+from typing import Literal
 
 
 class Clean:

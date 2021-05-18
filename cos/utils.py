@@ -1,7 +1,7 @@
-from pathlib import Path
+import json
 import subprocess
 import sys
-import json
+from pathlib import Path
 
 
 def check_virtual_env_installed() -> bool:

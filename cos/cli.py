@@ -1,11 +1,10 @@
 import os
-
 from typing import Iterable
 from typing import Optional
 
 import click
-from click import Context
 from click import Command
+from click import Context
 
 
 class Commands(click.MultiCommand):

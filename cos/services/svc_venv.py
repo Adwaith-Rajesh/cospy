@@ -1,15 +1,14 @@
+import json
 import os
 import shutil
 import subprocess
-import json
 import sys
 from pathlib import Path
-
 from typing import Dict
 
 import click
-from rich.table import Table
 from rich.console import Console
+from rich.table import Table
 
 from cos.utils import create_folder
 from cos.utils import create_json_file

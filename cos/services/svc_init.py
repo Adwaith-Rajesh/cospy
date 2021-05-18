@@ -1,18 +1,19 @@
-from pathlib import Path
-from ast import literal_eval
-from datetime import date
-
+import json
+import os
 import subprocess
 import sys
-import os
-import json
-
-from typing import Dict, List
+from ast import literal_eval
+from datetime import date
+from pathlib import Path
+from typing import Dict
+from typing import List
 
 import click
 import requests
 
-from cos.config import AUTHOR_NAME, AUTHOR_EMAIL, GITHUB_USER
+from cos.config import AUTHOR_EMAIL
+from cos.config import AUTHOR_NAME
+from cos.config import GITHUB_USER
 from cos.utils import check_virtual_env_installed
 
 START_META = os.path.join(
