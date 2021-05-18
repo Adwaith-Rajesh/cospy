@@ -144,8 +144,6 @@ In each group a task can be added, removed or marked as Done.
     ```
 
 ## Venv
-
-### For windows only
 <br>
 
 Venv is a simple and easy python virtual env manager.
@@ -188,10 +186,17 @@ ___examples___
   ```bash
   cos venv ls
   ```
-* Activate venv
+* Activate venv (Windows)
 
   To activate a venv created by `cospy`. Run the following command.
 
   ```bash
   cosenv <venv-name>
+  ```
+
+* Activate venv (Linux)
+
+  To activate a venv created by `cospy`. Run the following command.
+  ```bash
+  source cosenv <venv-name>
   ```

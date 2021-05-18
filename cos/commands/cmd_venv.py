@@ -15,10 +15,7 @@ from cos.services.svc_venv import venv_does_not_exist_msg
 def cli() -> None:
     """Manage all your Python venv in a single place.
     """
-    if platform.system() != "Windows":
-        click.echo(click.style(
-            "Oops! This command will only work on Windows.", fg="yellow"), file=sys.stdout)
-        sys.exit(1)
+    pass
 
 
 @cli.command()
