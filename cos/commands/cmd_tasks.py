@@ -1,3 +1,5 @@
+import sys
+
 import click
 
 from cos.services.svc_tasks import check_grp_exists
@@ -27,7 +29,8 @@ def cli(group: str, add: str, remove: int, done: int) -> None:
 
         else:
             click.echo(click.style(
-                f"Group {group!r} does not exists.", fg="red", bold=True))
+                f"Group {group!r} does not exists.", fg="red", bold=True), file=sys.stderr)
+            sys.exit(1)
 
         # if an action is done on a group then don't move forward to other commands
         exit()

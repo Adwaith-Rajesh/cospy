@@ -1,4 +1,4 @@
-import os
+import sys
 from pathlib import Path
 
 import click
@@ -21,8 +21,8 @@ def cli(language: str, name: str, directory: str, license: str, env: bool, no_gi
 
     if not Path(directory).is_dir():
         click.echo(click.style(
-            f"Directory {directory!r} does not exists.", fg="red", bold=True))
-        return None
+            f"Directory {directory!r} does not exists.", fg="red", bold=True), file=sys.stderr)
+        sys.exit(1)
 
     langs_and_lice = get_langs_and_licenses()
 
