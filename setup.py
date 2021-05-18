@@ -14,7 +14,7 @@ def read_requirements():
     return requirements
 
 
-scripts = ["cos/scripts/cosenv.bat"]
+scripts = ["cos/scripts/cosenv.bat", "cos/scripts/cosenv"]
 
 
 setup(

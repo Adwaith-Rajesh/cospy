@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+# check COS_VENV_DIR is set
+
+if [ ! "${COS_VENV_DIR}" ]; then
+    COS_VENV_DIR=`python -c "import os; print(os.path.join(os.path.expanduser('~'), 'cos_venvs'))"`
+fi
+
+# check whether a folder with the given name exists
+if [ -d "$COS_VENV_DIR/$1" ] && [ $1 ]; then
+    # make sure that the folder is a venv
+    if [ -e "$COS_VENV_DIR/$1/bin/activate" ]; then
+        source $COS_VENV_DIR/$1/bin/activate
+        # source $COS_VENV_DIR/$1/Scripts/activate
+        # activate_venv $1
+    fi
+
+else
+    if [[ ! -n "$1" ]]; then
+        # list envs
+        echo "Choose a venv from this list of venv"
+        for f in ${COS_VENV_DIR}/*; do
+            string="${f//[\\]//}"
+            echo "*" $(basename $string)
+        done
+
+    else
+        echo "Virtual env '$1' does not exists. Make them using this command 'cos venv new $1'"
+    fi
+fi
