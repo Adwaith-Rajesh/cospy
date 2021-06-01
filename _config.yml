@@ -1,1 +1,22 @@
+title: Cospy | A simple CLI tool
+author: Adwaith Rajesh
+
+
+navbar-links:
+  About Me: "https://adwaith-rajesh.github.io/#about"
+  Author's home: "https://adwaith-rajesh.github.io/"
+
+
 theme: jekyll-theme-architect
+
+social-network-links:
+  email: "adwaithrajesh3180@gmail.com"
+  github: Adwaith-Rajesh
+  twitter: AdwaithRajesh_
+  
+avatar: "favicon.ico"
+
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
