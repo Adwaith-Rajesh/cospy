@@ -1,4 +1,4 @@
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 # Cospy
 A Simple CLI tool do a lot of things.
