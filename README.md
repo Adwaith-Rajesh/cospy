@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+
 # Cospy
 A Simple CLI tool do a lot of things.
 
