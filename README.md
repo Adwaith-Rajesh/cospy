@@ -29,4 +29,4 @@ Below is the list of currently supported API.
 * [`cos venv`](https://github.com/Adwaith-Rajesh/cospy/blob/master/docs/README.md#venv) - Manage virtual environments
 
 ## Usage
-All the docs and usage are listed [here](https://github.com/Adwaith-Rajesh/cospy/tree/master/docs).
+All the docs and usage are listed [here](https://adwaith-rajesh.github.io/cospy/docs/).
