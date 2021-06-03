@@ -19,7 +19,7 @@ scripts = ["cos/scripts/cosenv.bat", "cos/scripts/cosenv"]
 
 setup(
     name="cospy",
-    version="0.4.1",
+    version="0.4.2",
     description="A simple CLI tool to do a lot of things..",
     long_description=long_description,
     long_description_content_type="text/markdown",
