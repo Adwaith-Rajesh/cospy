@@ -1,5 +1,5 @@
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="https://adwaith-rajesh.github.io/cospy/favicon.ico">
 </head>
 
 # Cospy
